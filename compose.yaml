@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  no-dnsname-checker:
+    build: .
+    container_name: no-dnsname-checker
+    volumes:
+        - "./app/:/opt/app"
+    ports:
+      - 52412:52412
