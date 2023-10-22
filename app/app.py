@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import cross_origin
 import logging
 import socket
 
@@ -6,6 +7,7 @@ app = Flask(__name__)
 
 
 @app.route("/resolve-dns", methods=["POST"])
+@cross_origin(origins=["*"])
 def resolve_dns():
     try:
         data = request.get_json()
